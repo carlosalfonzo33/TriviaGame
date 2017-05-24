@@ -62,6 +62,10 @@ var questions = [
 }
 
 ];
+
+$("#song")[0].play();
+
+$("#song")[0].loop = true;
 //questions
  $.each(questions, function(index,value){
  	console.log(questions);

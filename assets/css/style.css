@@ -28,7 +28,7 @@ label {
 }
 
 #startClock {
-  background-color: #1C2EDF;
+  background-color: #003B7B;
   text-align: center;
   font-size: 30px;
   width: 75%;
@@ -60,7 +60,7 @@ button:hover{
 }
 
 #start {
-  margin-top: -330px;
+  margin-top: 330px;
 }
 
 #results {
