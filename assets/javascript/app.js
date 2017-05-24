@@ -64,7 +64,7 @@ var questions = [
 ];
 //questions
  $.each(questions, function(index,value){
- 	//console.log(questions);
+ 	console.log(questions);
 
  		var $li=$("<li></li>");
  		$li.html(index + 1+". "+value.question);
@@ -92,7 +92,7 @@ var questions = [
  		})
 
 			$("#quiz-question").append($li);
-			console.log("$li");
+			//console.log("$li");
 
  });
 

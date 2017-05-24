@@ -1,5 +1,5 @@
 html, body {
-  background: url("../assets/images/nfl.jpg");
+  background: url("../assets/images/nfl.jpeg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -8,18 +8,16 @@ html, body {
 
 
 header {
-  background: url("../images/trivia.gif") no-repeat center center;
   height: 225px;
-  background-color: white;
   width: 75%;
   margin: 0 auto;
 
 }
 
 ul {
-  background-color: #ffbf00;
+  background-color: #e60000;
   width: 75%;
-  padding: 15px 0;
+  padding: 20px 0;
   margin: 0 auto;
 }
 li {
@@ -30,7 +28,7 @@ label {
 }
 
 #startClock {
-  background-color: gray;
+  background-color: #1C2EDF;
   text-align: center;
   font-size: 30px;
   width: 75%;
@@ -41,6 +39,7 @@ label {
 #quiz-question {
   text-align: center;
   font-size: 25px;
+
 }
 
 button{
@@ -61,11 +60,11 @@ button:hover{
 }
 
 #start {
-  margin-top: 220px;
+  margin-top: -330px;
 }
 
 #results {
-  background-color: #ffbf00;
+  background-color: #e60000;
   font-size: 18px;
   text-align: center;
   width: 75%;
@@ -78,3 +77,22 @@ button:hover{
 .hidden {
   display: none;
 }
+
+.background {
+  background-repeat: no-repeat; 
+    background-attachment: fixed;
+    background-position: center 0px;
+    background-size: cover;
+    background-image: url("../images/nfl.jpeg");
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+
