@@ -63,9 +63,7 @@ var questions = [
 
 ];
 
-$("#song")[0].play();
 
-$("#song")[0].loop = true;
 //questions
  $.each(questions, function(index,value){
  	console.log(questions);
@@ -152,6 +150,9 @@ startTimer();
     }
 
 $("#results").hide();
+
+
+
 // Done button function to display results
 
 $("#submit").on("click", function(){
@@ -166,5 +167,19 @@ $("#submit").on("click", function(){
 	$("#count").hide ();
 
 	});
+var spawnRestartButton = function() {
+	var button = $("<button>").text("Restart");
+	button.attr("id", "button-restart");
+	$(".question-container").append(button);
+
+}
+
+spawnRestartButton();
 
 });
+
+
+
+$("#song")[0].play();
+
+$("#song")[0].loop = true;
