@@ -21,6 +21,7 @@ ul {
 }
 li {
   padding-bottom: 40px;
+  list-style: none;
 }
 label {
   padding-right: 20px;

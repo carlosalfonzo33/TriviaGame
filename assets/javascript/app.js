@@ -108,10 +108,18 @@ var timer;
 
 function startTimer()
 {
-	var counts = 60, timer = setInterval(function() {
-    $("#count").html(counts--);
-    if(counts <= -1) clearInterval(timer);
-}, 1000);
+	var counts = 60;
+	var timer = setInterval(function() {
+	    $("#count").html(counts--);
+	    if(counts === 0) {
+	    	console.log('time is up!!!');
+	    	$("#quiz-question").hide();
+	    	$("#startClock").html('Time is up!!');
+	    }
+	    if(counts <= -1) {
+	    	clearInterval(timer);
+	    }
+	}, 1000);
     
      
 };
@@ -165,16 +173,19 @@ $("#submit").on("click", function(){
 	$("#quiz-question").hide();
 	$("#submit").hide();
 	$("#count").hide ();
+	$("#button-restart").show ();
 
 	});
 var spawnRestartButton = function() {
 	var button = $("<button>").text("Restart");
+	button.hide();
 	button.attr("id", "button-restart");
 	$(".question-container").append(button);
 
 }
 
 spawnRestartButton();
+// #("#button-restart").on("click")
 
 });
 
