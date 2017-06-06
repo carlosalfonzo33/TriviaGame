@@ -105,46 +105,56 @@ var answerWrong = 0;
 var notAnswered = 0;
 var timer;
 
+// var countDown = function() {
+// 	var counts = 60;
+//     $("#count").html(counts--);
+//     if(counts === 0) {
+//     	console.log('time is up!!!');
+//     	$("#quiz-question").hide();
+//     	$("#startClock").html('Time is up!!');
+//     }
+//     if(counts <= -1) {
+//     	clearInterval(timer);
+//     }
+// };
 
-function startTimer()
-{
-	var counts = 60;
-	var timer = setInterval(function() {
-	    $("#count").html(counts--);
-	    if(counts === 0) {
-	    	console.log('time is up!!!');
-	    	$("#quiz-question").hide();
-	    	$("#startClock").html('Time is up!!');
-	    }
-	    if(counts <= -1) {
-	    	clearInterval(timer);
-	    }
-	}, 1000);
-    
-     
+
+function startTimer(count) {
+	// var counts = 60;
+	console.log(count);
+	timer = setInterval(function() {
+	
+    $("#count").html(count--);
+    if(count === 0) {
+    	console.log('time is up!!!');
+    	$("#quiz-question").hide();
+    	$("#startClock").html('Time is up!!');
+    }
+    if(count <= -1) {
+    	clearInterval(timer);
+    }
+}, 1000);    
 };
 
-
-startTimer();
-		$('#start').click(function(){
-	  	$(".blanket").removeClass("hidden");
-	  	$(this).addClass("hidden");
+$('#start').click(function() {
+	$(".blanket").removeClass("hidden");
+	$(this).addClass("hidden");
+	startTimer(60);
 	  	
-
-
 });
-	function questChecker (){
-        $("input:checked").each(function(i, input) {
-            var val = $(input).val();
+
+function questChecker() {
+	$("input:checked").each(function(i, input) {
+		var val = $(input).val();
             //console.log("i", i);
             // console.log("input", input);
             // console.log("val", val);
-            var answerIndex = $(input).parent().attr("correctAnswer");
+         var answerIndex = $(input).parent().attr("correctAnswer");
             //console.log("answer", answer);
-            console.log("correct answer: ", questions[i].choices[answerIndex]);
-            var answer = questions[i].choices[answerIndex];
+         console.log("correct answer: ", questions[i].choices[answerIndex]);
+          var answer = questions[i].choices[answerIndex];
             
-            if(val == answer){
+          if(val == answer){
                 answerCorrect++;
             }
  
@@ -153,9 +163,9 @@ startTimer();
             }
            
             
-        });
-        notAnswered = questions.length - (answerCorrect + answerWrong);
-    }
+     });
+     notAnswered = questions.length - (answerCorrect + answerWrong);
+}
 
 $("#results").hide();
 
@@ -163,7 +173,7 @@ $("#results").hide();
 
 // Done button function to display results
 
-$("#submit").on("click", function(){
+$("#submit").on("click", function() {
 
 	questChecker();
 	$("#results").show();
@@ -172,8 +182,9 @@ $("#submit").on("click", function(){
 	$("#notAns").text(notAnswered);
 	$("#quiz-question").hide();
 	$("#submit").hide();
-	$("#count").hide ();
-	$("#button-restart").show ();
+	$("#count").hide();
+	$("#button-restart").show();
+	clearInterval(timer);
 
 	});
 var spawnRestartButton = function() {
@@ -189,7 +200,16 @@ spawnRestartButton();
 
 });
 
+$(document).on("click", "#button-restart", function() {
+	$(".question-container").empty();
+	$("#quiz-question").show();
+	$("#results").hide()
+	$("#submit").show();
+	$("#count").show();
+	startTimer(60);
+		
 
+});
 
 $("#song")[0].play();
 
