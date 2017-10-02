@@ -8,3 +8,6 @@
 
 
 
+<img width="1625" alt="screen shot 2017-10-01 at 2 25 06 pm" src="https://user-images.githubusercontent.com/25913749/31061275-6283bba4-a6d4-11e7-83d9-6cc4a9f1979c.png">
+
+<img width="1623" alt="screen shot 2017-10-01 at 2 25 24 pm" src="https://user-images.githubusercontent.com/25913749/31061278-6935071e-a6d4-11e7-960e-010ebfc5f995.png">
